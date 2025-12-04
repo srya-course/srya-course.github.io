@@ -1,0 +1,45 @@
+# 圖片管理 YAML
+# 此檔案統一管理所有圖片
+
+images:
+  - id: "gallery-anime-avatar"
+    title: "動漫頭像"
+    description: "可愛的動漫人物頭像"
+    url: "/generated_images/Anime_profile_avatar_d7cc07e4.png"
+    category: "人物"
+    createdAt: "2024-12-04"
+
+  - id: "gallery-cherry-blossom"
+    title: "櫻花之美"
+    description: "春天的櫻花盛開，美不勝收"
+    url: "/generated_images/Cherry_blossom_landscape_a832bd8f.png"
+    category: "風景"
+    createdAt: "2024-12-04"
+
+  - id: "gallery-study-scene"
+    title: "學習時光"
+    description: "認真學習的每一天"
+    url: "/generated_images/Study_scene_illustration_12bedbb6.png"
+    category: "生活"
+    createdAt: "2024-12-04"
+
+  - id: "gallery-city-sunset"
+    title: "城市夕陽"
+    description: "城市的黃昏時分"
+    url: "/generated_images/City_sunset_scene_84c37eb6.png"
+    category: "風景"
+    createdAt: "2024-12-04"
+
+  - id: "gallery-kawaii-bento"
+    title: "可愛便當"
+    description: "美味的便當料理"
+    url: "/generated_images/Kawaii_bento_illustration_2dd3e007.png"
+    category: "美食"
+    createdAt: "2024-12-04"
+
+  - id: "gallery-starry-night"
+    title: "星空夜晚"
+    description: "美麗的星空夜景"
+    url: "/generated_images/Starry_night_background_1f964612.png"
+    category: "風景"
+    createdAt: "2024-12-04"

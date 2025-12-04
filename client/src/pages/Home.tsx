@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
@@ -7,10 +8,6 @@ import GallerySection from "@/components/GallerySection";
 import NotesSection from "@/components/NotesSection";
 import VideoSection from "@/components/VideoSection";
 import Footer from "@/components/Footer";
-import AddDiaryForm from "@/components/AddDiaryForm";
-import AddNoteForm from "@/components/AddNoteForm";
-import AddGalleryImageForm from "@/components/AddGalleryImageForm";
-import AddVideoForm from "@/components/AddVideoForm";
 
 import type { DiaryEntry, Note, GalleryImage, Video } from "@shared/schema";
 
@@ -23,6 +20,7 @@ import starryNight from '@assets/generated_images/Starry_night_background_1f9646
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
+  const [, setLocation] = useLocation();
 
   const handleNavigate = (section: string) => {
     setActiveSection(section);
@@ -34,20 +32,28 @@ export default function Home() {
     }
   };
 
+  const handleDiaryReadMore = (id: string) => {
+    setLocation(`/diary/${id}`);
+  };
+
+  const handleNoteClick = (id: string) => {
+    setLocation(`/notes/${id}`);
+  };
+
   const { data: diaryEntries = [] } = useQuery<DiaryEntry[]>({
-    queryKey: ["/api/diary-entries"],
+    queryKey: ["/content/diary.json"],
   });
 
   const { data: galleryImages = [] } = useQuery<GalleryImage[]>({
-    queryKey: ["/api/gallery-images"],
+    queryKey: ["/content/gallery.json"],
   });
 
   const { data: notes = [] } = useQuery<Note[]>({
-    queryKey: ["/api/notes"],
+    queryKey: ["/content/notes.json"],
   });
 
   const { data: videos = [] } = useQuery<Video[]>({
-    queryKey: ["/api/videos"],
+    queryKey: ["/content/videos.json"],
   });
 
   const defaultGalleryImages = [
@@ -103,19 +109,19 @@ export default function Home() {
       
       <main>
         <HeroSection 
-          name="小明"
+          name="SubaRya"
           introduction="我是一個開心的動漫宅"
           email="example@example.com"
           avatarUrl={avatarImage}
         />
         
-        <DiarySection entries={diaryEntries} addButton={<AddDiaryForm />} />
-        <GallerySection images={displayGalleryImages} addButton={<AddGalleryImageForm />} />
-        <NotesSection notes={notes} addButton={<AddNoteForm />} />
-        <VideoSection videos={videos} addButton={<AddVideoForm />} />
+        <DiarySection entries={diaryEntries} onReadMore={handleDiaryReadMore} />
+        <GallerySection images={displayGalleryImages} />
+        <NotesSection notes={notes} onNoteClick={handleNoteClick} />
+        <VideoSection videos={videos} />
       </main>
 
-      <Footer name="小明" email="example@example.com" />
+      <Footer name="SubaRya" email="example@example.com" />
     </div>
   );
 }

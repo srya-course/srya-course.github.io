@@ -1,0 +1,37 @@
+# 筆記範本範例
+# 新增筆記時，請複製此檔案並修改檔名和內容
+
+id: note-2025-12-04-001          # 唯一識別碼
+title: "React Hooks 學習筆記"    # 筆記標題
+category: "技術"                 # 分類（例如：技術、生活、讀書等）
+tags:                            # 標籤，方便搜尋
+  - React
+  - JavaScript
+  - Hooks
+date: "2025-12-04"              # 建立日期，格式 YYYY-MM-DD
+preview: "useState 和 useEffect 是最常用的兩個 Hook..."  # 預覽文本
+content: |
+  # React Hooks 學習筆記
+  
+  ## 什麼是 Hooks？
+  Hooks 是一種讓你在函數組件中使用 state 和其他 React 特性的方式。
+  
+  ## 常用的 Hooks
+  
+  ### 1. useState
+  用於在函數組件中添加 state
+  ```javascript
+  const [count, setCount] = useState(0);
+  ```
+  
+  ### 2. useEffect
+  用於執行副作用操作
+  ```javascript
+  useEffect(() => {
+    // 副作用邏輯
+  }, [dependencies]);
+  ```
+  
+  ## 最佳實踐
+  - 只在最上層呼叫 Hook
+  - 只在 React 函數中呼叫 Hook

@@ -1,0 +1,23 @@
+# 影片管理 YAML
+# 此檔案統一管理所有影片
+
+videos:
+  - id: "video-2024-12-04-001"
+    title: "第一個影片"
+    description: "影片描述"
+    embedUrl: "https://www.youtube.com/embed/xxx"  # YouTube 嵌入 URL 或其他
+    thumbnailUrl: "/path/to/thumbnail1.jpg"        # 縮圖路徑
+    duration: "5:30"                                # 影片時長
+    category: "教程"                                # 可選分類
+    createdAt: "2024-12-04"
+
+  - id: "video-2024-12-04-002"
+    title: "第二個影片"
+    description: "另一個影片的描述"
+    embedUrl: "https://www.youtube.com/embed/yyy"
+    thumbnailUrl: "/path/to/thumbnail2.jpg"
+    duration: "10:15"
+    category: "生活"
+    createdAt: "2024-12-04"
+
+  # 繼續添加更多影片...

@@ -16,10 +16,9 @@ export interface Note {
 interface NotesSectionProps {
   notes?: Note[];
   onNoteClick?: (id: string) => void;
-  addButton?: React.ReactNode;
 }
 
-export default function NotesSection({ notes = [], onNoteClick, addButton }: NotesSectionProps) {
+export default function NotesSection({ notes = [], onNoteClick }: NotesSectionProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
@@ -45,13 +44,10 @@ export default function NotesSection({ notes = [], onNoteClick, addButton }: Not
     <section className="py-16 px-6" id="notes">
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="text-center space-y-2">
-          <div className="flex items-center justify-center gap-4 flex-wrap">
-            <h2 className="text-4xl font-bold text-foreground flex items-center gap-2">
-              <BookOpen className="w-8 h-8 text-primary" />
-              我的筆記
-            </h2>
-            {addButton}
-          </div>
+          <h2 className="text-4xl font-bold text-foreground flex items-center justify-center gap-2">
+            <BookOpen className="w-8 h-8 text-primary" />
+            我的筆記
+          </h2>
           <p className="text-muted-foreground">學習與知識的累積</p>
         </div>
 

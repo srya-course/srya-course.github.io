@@ -5,7 +5,7 @@ interface FooterProps {
   email?: string;
 }
 
-export default function Footer({ name = "小明", email = "example@example.com" }: FooterProps) {
+export default function Footer({ name = "SubaRya", email = "example@example.com" }: FooterProps) {
   return (
     <footer className="py-12 px-6 border-t border-border bg-card/30">
       <div className="max-w-6xl mx-auto">

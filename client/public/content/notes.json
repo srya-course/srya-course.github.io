@@ -1,0 +1,15 @@
+[
+  {
+    "id": "note-2025-12-04-001",
+    "title": "React Hooks 學習筆記",
+    "category": "技術",
+    "tags": [
+      "React",
+      "JavaScript",
+      "Hooks"
+    ],
+    "date": "2025-12-04",
+    "preview": "useState 和 useEffect 是最常用的兩個 Hook...",
+    "content": "# React Hooks 學習筆記\n\n## 什麼是 Hooks？\nHooks 是一種讓你在函數組件中使用 state 和其他 React 特性的方式。\n\n## 常用的 Hooks\n\n### 1. useState\n用於在函數組件中添加 state\n```javascript\nconst [count, setCount] = useState(0);\n```\n\n### 2. useEffect\n用於執行副作用操作\n```javascript\nuseEffect(() => {\n  // 副作用邏輯\n}, [dependencies]);\n```\n\n## 最佳實踐\n- 只在最上層呼叫 Hook\n- 只在 React 函數中呼叫 Hook\n"
+  }
+]

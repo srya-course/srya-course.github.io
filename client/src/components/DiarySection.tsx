@@ -14,10 +14,9 @@ export interface DiaryEntry {
 interface DiarySectionProps {
   entries?: DiaryEntry[];
   onReadMore?: (id: string) => void;
-  addButton?: React.ReactNode;
 }
 
-export default function DiarySection({ entries = [], onReadMore, addButton }: DiarySectionProps) {
+export default function DiarySection({ entries = [], onReadMore }: DiarySectionProps) {
   const handleReadMore = (id: string) => {
     console.log(`Reading diary entry: ${id}`);
     onReadMore?.(id);
@@ -27,13 +26,10 @@ export default function DiarySection({ entries = [], onReadMore, addButton }: Di
     <section className="py-16 px-6" id="diary">
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="text-center space-y-2">
-          <div className="flex items-center justify-center gap-4 flex-wrap">
-            <h2 className="text-4xl font-bold text-foreground flex items-center gap-2">
-              <Heart className="w-8 h-8 text-primary" />
-              我的日記
-            </h2>
-            {addButton}
-          </div>
+          <h2 className="text-4xl font-bold text-foreground flex items-center justify-center gap-2">
+            <Heart className="w-8 h-8 text-primary" />
+            我的日記
+          </h2>
           <p className="text-muted-foreground">記錄生活中的美好時刻</p>
         </div>
 

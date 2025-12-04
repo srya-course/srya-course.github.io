@@ -15,10 +15,9 @@ export interface VideoItem {
 interface VideoSectionProps {
   videos?: VideoItem[];
   onVideoClick?: (id: string) => void;
-  addButton?: React.ReactNode;
 }
 
-export default function VideoSection({ videos = [], onVideoClick, addButton }: VideoSectionProps) {
+export default function VideoSection({ videos = [], onVideoClick }: VideoSectionProps) {
   const handleVideoClick = (id: string) => {
     console.log(`Playing video: ${id}`);
     onVideoClick?.(id);
@@ -28,13 +27,10 @@ export default function VideoSection({ videos = [], onVideoClick, addButton }: V
     <section className="py-16 px-6 bg-accent/30" id="videos">
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="text-center space-y-2">
-          <div className="flex items-center justify-center gap-4 flex-wrap">
-            <h2 className="text-4xl font-bold text-foreground flex items-center gap-2">
-              <VideoIcon className="w-8 h-8 text-primary" />
-              我的影片
-            </h2>
-            {addButton}
-          </div>
+          <h2 className="text-4xl font-bold text-foreground flex items-center justify-center gap-2">
+            <VideoIcon className="w-8 h-8 text-primary" />
+            我的影片
+          </h2>
           <p className="text-muted-foreground">影片創作與分享</p>
         </div>
 

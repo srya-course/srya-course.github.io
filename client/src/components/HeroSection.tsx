@@ -10,7 +10,7 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ 
-  name = "小明",
+  name = "SubaRya",
   introduction = "我是一個開心的動漫宅",
   email = "example@example.com",
   avatarUrl

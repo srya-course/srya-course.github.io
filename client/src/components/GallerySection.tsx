@@ -17,10 +17,9 @@ export interface GalleryImage {
 
 interface GallerySectionProps {
   images?: GalleryImage[];
-  addButton?: React.ReactNode;
 }
 
-export default function GallerySection({ images = [], addButton }: GallerySectionProps) {
+export default function GallerySection({ images = [] }: GallerySectionProps) {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
   const handleImageClick = (image: GalleryImage) => {
@@ -32,13 +31,10 @@ export default function GallerySection({ images = [], addButton }: GallerySectio
     <section className="py-16 px-6 bg-accent/30" id="gallery">
       <div className="max-w-6xl mx-auto space-y-8">
         <div className="text-center space-y-2">
-          <div className="flex items-center justify-center gap-4 flex-wrap">
-            <h2 className="text-4xl font-bold text-foreground flex items-center gap-2">
-              <ImageIcon className="w-8 h-8 text-primary" />
-              我的圖畫
-            </h2>
-            {addButton}
-          </div>
+          <h2 className="text-4xl font-bold text-foreground flex items-center justify-center gap-2">
+            <ImageIcon className="w-8 h-8 text-primary" />
+            我的圖畫
+          </h2>
           <p className="text-muted-foreground">創作與靈感的展示</p>
         </div>
 
